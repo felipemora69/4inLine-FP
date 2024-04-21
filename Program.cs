@@ -156,7 +156,7 @@ public class Game
     {
         board = new Board();
         players = new Player[] { player1, player2 };
-        currentPlayerIndex = 0; // Start with the first player
+        currentPlayerIndex = 0;//Start with the first player
     }
 
     public void Start()
@@ -171,10 +171,10 @@ public class Game
             Console.WriteLine();
             board.Display();
 
-            // Get the current player
+            //Get the current player
             Player currentPlayer = players[currentPlayerIndex];
 
-            // Prompt the player for a column to drop their piece
+            //Prompt the player for a column to drop their piece
             int column;
             do
             {
@@ -188,7 +188,7 @@ public class Game
                 column--;
             } while (!board.DropPiece(column, currentPlayer.Symbol));
 
-            // Check for a win
+            //Check for a win
             if (board.CheckWinner(currentPlayer.Symbol))
             {
                 Console.WriteLine();
@@ -203,12 +203,12 @@ public class Game
                 board.Display();
                 Console.WriteLine("It's a draw! The board is full.");
 
-                // Prompt for restart
+                //Prompt for restart
                 gameEnded = !PromptRestart();
             }
             else
             {
-                // Switch to the next player
+                //Switch to the next player
                 currentPlayerIndex = (currentPlayerIndex + 1) % 2;
             }
         }
@@ -220,9 +220,29 @@ public class Game
         int choice;
         if (int.TryParse(Console.ReadLine(), out choice))
         {
-            return choice == 1;
+            if (choice == 1)
+            {
+                //Reset game state for a new game
+                ResetGame();
+                return true;//Continue with a new game
+            }
         }
         return false;
+    }
+
+    private void ResetGame()
+    {
+        //Clear the game board
+        for (int row = 0; row < 6; row++)
+        {
+            for (int col = 0; col < 7; col++)
+            {
+                board.DropPiece(col, null);// Drop null (clear) piece at each column
+            }
+        }
+
+        // Reset current player index to start with the first player again
+        currentPlayerIndex = 0;
     }
 }
 
