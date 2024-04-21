@@ -39,6 +39,82 @@ public class Board
         }
         return false;
     }
+    public bool IsFull()
+    {
+        // Check if the top row of each column is completely filled (no null values)
+        for (int col = 0; col < 7; col++)
+        {
+            if (grid[0, col] == null)
+                return false;
+        }
+        return true; // Board is full
+    }
+
+    // Method to check if the specified player has won the game
+    public bool CheckWinner(char symbol)
+    {
+        // Check horizontal win
+        for (int row = 0; row < 6; row++)
+        {
+            for (int col = 0; col < 4; col++)
+            {
+                if (grid[row, col] == symbol &&
+                    grid[row, col + 1] == symbol &&
+                    grid[row, col + 2] == symbol &&
+                    grid[row, col + 3] == symbol)
+                {
+                    return true; // Horizontal win
+                }
+            }
+        }
+
+        // Check vertical win
+        for (int row = 0; row < 3; row++)
+        {
+            for (int col = 0; col < 7; col++)
+            {
+                if (grid[row, col] == symbol &&
+                    grid[row + 1, col] == symbol &&
+                    grid[row + 2, col] == symbol &&
+                    grid[row + 3, col] == symbol)
+                {
+                    return true; // Vertical win
+                }
+            }
+        }
+
+        // Check diagonal (positive slope) win
+        for (int row = 0; row < 3; row++)
+        {
+            for (int col = 0; col < 4; col++)
+            {
+                if (grid[row, col] == symbol &&
+                    grid[row + 1, col + 1] == symbol &&
+                    grid[row + 2, col + 2] == symbol &&
+                    grid[row + 3, col + 3] == symbol)
+                {
+                    return true; // Diagonal (positive slope) win
+                }
+            }
+        }
+
+        // Check diagonal (negative slope) win
+        for (int row = 0; row < 3; row++)
+        {
+            for (int col = 3; col < 7; col++)
+            {
+                if (grid[row, col] == symbol &&
+                    grid[row + 1, col - 1] == symbol &&
+                    grid[row + 2, col - 2] == symbol &&
+                    grid[row + 3, col - 3] == symbol)
+                {
+                    return true; // Diagonal (negative slope) win
+                }
+            }
+        }
+
+        return false;
+    }
 }
 
 public class Player
