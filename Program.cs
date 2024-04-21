@@ -1,2 +1,21 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using System;
+
+public class Board
+{
+
+}
+
+public class Player
+{
+
+}
+
+public class Game
+{
+
+}
+
+public class Program
+{
+
+}
