@@ -148,7 +148,82 @@ public class Player
 
 public class Game
 {
+    private Board board;
+    private Player[] players;
+    private int currentPlayerIndex;
 
+    public Game(Player player1, Player player2)
+    {
+        board = new Board();
+        players = new Player[] { player1, player2 };
+        currentPlayerIndex = 0; // Start with the first player
+    }
+
+    public void Start()
+    {
+        Console.WriteLine("Connect 4 Game Development Project:");
+
+        bool gameEnded = false;
+
+        while (!gameEnded)
+        {
+            // Display the current state of the game board
+            Console.WriteLine();
+            board.Display();
+
+            // Get the current player
+            Player currentPlayer = players[currentPlayerIndex];
+
+            // Prompt the player for a column to drop their piece
+            int column;
+            do
+            {
+                Console.Write($"It is {currentPlayer.Name}'s turn ({currentPlayer.Symbol}): Enter column (1-7): ");
+                if (!int.TryParse(Console.ReadLine(), out column) || column < 1 || column > 7)
+                {
+                    Console.WriteLine("Invalid input. Please enter a valid column number (1-7).");
+                    continue;
+                }
+
+                column--;
+            } while (!board.DropPiece(column, currentPlayer.Symbol));
+
+            // Check for a win
+            if (board.CheckWinner(currentPlayer.Symbol))
+            {
+                Console.WriteLine();
+                board.Display();
+                Console.WriteLine($"It is a Connect 4. {currentPlayer.Name} wins!");
+
+                gameEnded = !PromptRestart();
+            }
+            else if (board.IsFull())
+            {
+                Console.WriteLine();
+                board.Display();
+                Console.WriteLine("It's a draw! The board is full.");
+
+                // Prompt for restart
+                gameEnded = !PromptRestart();
+            }
+            else
+            {
+                // Switch to the next player
+                currentPlayerIndex = (currentPlayerIndex + 1) % 2;
+            }
+        }
+    }
+
+    private bool PromptRestart()
+    {
+        Console.Write("Restart? Yes(1) No(0): ");
+        int choice;
+        if (int.TryParse(Console.ReadLine(), out choice))
+        {
+            return choice == 1;
+        }
+        return false;
+    }
 }
 
 public class Program
