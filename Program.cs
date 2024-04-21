@@ -115,6 +115,23 @@ public class Board
 
         return false;
     }
+
+    public void ClearCell(int row, int col)
+    {
+        grid[row, col] = null;
+    }
+
+    public void ClearBoard()
+    {
+        // Clear all cells on the board
+        for (int row = 0; row < 6; row++)
+        {
+            for (int col = 0; col < 7; col++)
+            {
+                ClearCell(row, col);
+            }
+        }
+    }
 }
 
 public class Player
@@ -232,16 +249,8 @@ public class Game
 
     private void ResetGame()
     {
-        //Clear the game board
-        for (int row = 0; row < 6; row++)
-        {
-            for (int col = 0; col < 7; col++)
-            {
-                board.DropPiece(col, null);// Drop null (clear) piece at each column
-            }
-        }
-
-        // Reset current player index to start with the first player again
+        //Reset game
+        board.ClearBoard();
         currentPlayerIndex = 0;
     }
 }
@@ -252,11 +261,11 @@ public class Program
     {
         // Prompt for player names and create Player instances with assigned symbols
         Console.Write("Enter Player 1's name: ");
-        string player1Name = Console.ReadLine();
+        string player1Name = Console.ReadLine()!;
         Player player1 = new Player(player1Name, 'X'); // First player always has symbol 'X'
 
         Console.Write("Enter Player 2's name: ");
-        string player2Name = Console.ReadLine();
+        string player2Name = Console.ReadLine()!;
         Player player2 = new Player(player2Name, 'O'); // Second player always has symbol 'O'
 
         // Create a new Game instance with the two players
