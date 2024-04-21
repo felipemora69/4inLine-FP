@@ -230,10 +230,19 @@ public class Program
 {
     static void Main(string[] args)
     {
-        //Create two player instances and the game
-        Player player1 = new Player("Player 1", 'X');
-        Player player2 = new Player("Player 2", 'O');
+        // Prompt for player names and create Player instances with assigned symbols
+        Console.Write("Enter Player 1's name: ");
+        string player1Name = Console.ReadLine();
+        Player player1 = new Player(player1Name, 'X'); // First player always has symbol 'X'
+
+        Console.Write("Enter Player 2's name: ");
+        string player2Name = Console.ReadLine();
+        Player player2 = new Player(player2Name, 'O'); // Second player always has symbol 'O'
+
+        // Create a new Game instance with the two players
         Game game = new Game(player1, player2);
+
+        // Start the game
         game.Start();
     }
 }

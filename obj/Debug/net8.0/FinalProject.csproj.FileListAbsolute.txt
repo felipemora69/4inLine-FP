@@ -1,0 +1,15 @@
+C:\Users\Lenovo\Desktop\2nd Semestrer\SODV1202 - OBJ ORIEN PROG\C#\FinalProject\bin\Debug\net8.0\FinalProject.exe
+C:\Users\Lenovo\Desktop\2nd Semestrer\SODV1202 - OBJ ORIEN PROG\C#\FinalProject\bin\Debug\net8.0\FinalProject.deps.json
+C:\Users\Lenovo\Desktop\2nd Semestrer\SODV1202 - OBJ ORIEN PROG\C#\FinalProject\bin\Debug\net8.0\FinalProject.runtimeconfig.json
+C:\Users\Lenovo\Desktop\2nd Semestrer\SODV1202 - OBJ ORIEN PROG\C#\FinalProject\bin\Debug\net8.0\FinalProject.dll
+C:\Users\Lenovo\Desktop\2nd Semestrer\SODV1202 - OBJ ORIEN PROG\C#\FinalProject\bin\Debug\net8.0\FinalProject.pdb
+C:\Users\Lenovo\Desktop\2nd Semestrer\SODV1202 - OBJ ORIEN PROG\C#\FinalProject\obj\Debug\net8.0\FinalProject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lenovo\Desktop\2nd Semestrer\SODV1202 - OBJ ORIEN PROG\C#\FinalProject\obj\Debug\net8.0\FinalProject.AssemblyInfoInputs.cache
+C:\Users\Lenovo\Desktop\2nd Semestrer\SODV1202 - OBJ ORIEN PROG\C#\FinalProject\obj\Debug\net8.0\FinalProject.AssemblyInfo.cs
+C:\Users\Lenovo\Desktop\2nd Semestrer\SODV1202 - OBJ ORIEN PROG\C#\FinalProject\obj\Debug\net8.0\FinalProject.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\Desktop\2nd Semestrer\SODV1202 - OBJ ORIEN PROG\C#\FinalProject\obj\Debug\net8.0\FinalProject.sourcelink.json
+C:\Users\Lenovo\Desktop\2nd Semestrer\SODV1202 - OBJ ORIEN PROG\C#\FinalProject\obj\Debug\net8.0\FinalProject.dll
+C:\Users\Lenovo\Desktop\2nd Semestrer\SODV1202 - OBJ ORIEN PROG\C#\FinalProject\obj\Debug\net8.0\refint\FinalProject.dll
+C:\Users\Lenovo\Desktop\2nd Semestrer\SODV1202 - OBJ ORIEN PROG\C#\FinalProject\obj\Debug\net8.0\FinalProject.pdb
+C:\Users\Lenovo\Desktop\2nd Semestrer\SODV1202 - OBJ ORIEN PROG\C#\FinalProject\obj\Debug\net8.0\FinalProject.genruntimeconfig.cache
+C:\Users\Lenovo\Desktop\2nd Semestrer\SODV1202 - OBJ ORIEN PROG\C#\FinalProject\obj\Debug\net8.0\ref\FinalProject.dll
