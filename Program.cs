@@ -119,7 +119,31 @@ public class Board
 
 public class Player
 {
-    
+    public string Name { get; }
+    public char Symbol { get; }//represents the symbol of the player
+
+    //get the name and symbol of the players
+    public Player(string name, char symbol)
+    {
+        Name = name;
+        Symbol = symbol;
+    }
+
+    public int MakeMove()
+    {
+        while (true)
+        {
+            Console.Write($"{Name}'s turn ({Symbol}): Enter column (1-7): ");//Prompt for column input
+            if (int.TryParse(Console.ReadLine(), out int col) && col >= 1 && col <= 7)
+            {
+                return col - 1;//Convert input (1-7) to zero-based index (0-6)
+            }
+            else
+            {
+                Console.WriteLine("Invalid column. Please try again.");//Display error message
+            }
+        }
+    }
 }
 
 public class Game
