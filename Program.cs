@@ -26,7 +26,19 @@ public class Board
         Console.WriteLine("| 1 | 2 | 3 | 4 | 5 | 6 | 7 |");
     }
 
-
+    public bool DropPiece(int col, char symbol)
+    {
+        // Start from the bottom row and move upwards to find the first available space in the column rule
+        for (int row = 5; row >= 0; row--)
+        {
+            if (grid[row, col] == null)
+            {
+                grid[row, col] = symbol;//Place the symbol of the players
+                return true; // Piece dropped successfully
+            }
+        }
+        return false;
+    }
 }
 
 public class Player
